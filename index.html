@@ -7,26 +7,24 @@
 </head>
 
 <body>
-
 <script>
 $(document).ready(function(){
   
     var txt="";
-    txt+="Width of div: " + $("#test").width() + "</br>";
-    txt+="Height of div: " + $("#test").height();
-    $("#sizes").html(txt);
+    txt+="Width of div: " + $("#div1").width() + "</br>";
+    txt+="Height of div: " + $("#div1").height();
+    $("#div1").html(txt);
  
 });
 </script>
+</head>
+<body>
 
-
-<div id="test">
-<h1>This is a test</h1>
-
-<p>This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test This is a paragraph test</p>
-</div>
-
-<div id="sizes"></div>
+<div id="div1" style="height:100px;width:305px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
+<br>
+<button>Display dimensions of div</button>
+<p>width() - returns the width of an element.</p>
+<p>height() - returns the height of an element.</p>
 
 </body>
 </html>
