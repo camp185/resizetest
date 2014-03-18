@@ -9,12 +9,14 @@
 <body>
 
 <script>
-//shooting for 960 x 540 dimensions. If screen is smaller, reduce content accordingly, including font.
 $(document).ready(function(){
-var windowWidth = $(window).width();  
-});
-alert(windowWidth);
   
+    var txt="";
+    txt+="Width of div: " + $("#test").width() + "</br>";
+    txt+="Height of div: " + $("#test").height();
+    $("#test").html(txt);
+  
+});
 </script>
 
 
