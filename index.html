@@ -8,23 +8,51 @@
 
 <body>
 <script>
+//shooting for 540 in window height...if smaller, shrink font size the same percentage.
+//For this case I'm unconcerned abut the original width, most screens support 960px.
 $(document).ready(function(){
-  
-    var txt="";
-    txt+="Width of div: " + $("#div1").width() + "</br>";
-    txt+="Height of div: " + $("#div1").height();
-    $("#div1").html(txt);
+
+var targetWidth = 960;
+var targetHeight = 540;
+
+    var userHeight =$(window).height();
+	if (userHeight > targetHeight)
+		userHeight = targetHeight;
+
+	var reSize = ((userHeight * 100)/targetHeight); 
+	var reSizefont = reSize + "%";
+	var reSizewidth = (reSize/100)*targetWidth;
+	reSize = (targetHeight*(reSize/100));
+
+	
+	//resize div
+	$("#div1").css("width",reSizewidth+"px");
+	$("#div1").css("height",reSize+"px");
+	
+	//resize images
+	$("img").css("width",reSizewidth+"px");
+	$("img").css("height",reSize+"px");
+	
+	//resize fonts
+	$("body").css("font-size",reSizefont);
+	//$("#div3").css("font-size",reSizefont);
+	
+	    //$("#div3").html("W:" + reSizewidth + ", H:" + reSize); 
+		//$("#div2").html(reSizefont);
+	
  
 });
 </script>
 </head>
 <body>
 
-<div id="div1" style="height:100px;width:305px;padding:10px;margin:3px;border:1px solid blue;background-color:lightblue;"></div>
-<br>
-<button>Display dimensions of div</button>
-<p>width() - returns the width of an element.</p>
-<p>height() - returns the height of an element.</p>
+<div id="div1" style="width:960px;height:540px; border:1px solid blue;background-color:lightblue;">
+<img src="test.png" alt="test Image">
+<h1>test h1 text will end right ******************here at full width --></h1>
+<p>Paragraph size text, initial size set for 14px Mics text to show font size change: idth:960px;height:540px; border:1px solid blue;background-color:lightblue; idth:960px;height:540px; border:1px solid blue;background-color:lightblue;idth:960px;height:540px; border:1px solid blue;background-color:lightblue;idth:960px;height:540px; border:1px solid blue;background-color:lightblue;idth:960px;height:540px; border:1px solid blue;background-color:lightblue;idth:960px;height:540px; border:1px solid blue;background-color:lightblue;</p></div>
+<div id="div2"></div>
+<div id="div3"></div>
+
 
 </body>
 </html>
